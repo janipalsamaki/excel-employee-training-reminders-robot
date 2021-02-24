@@ -1,22 +1,22 @@
+from os import environ
+from emailer import send_email
 from RPA.Excel.Files import Files
 from RPA.Tables import Tables
-from emailer import send_email
-from os import environ
 
-employees_excel_path = environ["EMPLOYEES_EXCEL_PATH"]
-trainings_excel_path = environ["TRAININGS_EXCEL_PATH"]
+EMPLOYEES_EXCEL_PATH = environ["EMPLOYEES_EXCEL_PATH"]
+TRAININGS_EXCEL_PATH = environ["TRAININGS_EXCEL_PATH"]
 excel = Files()
 tables = Tables()
 
 
 def send_training_reminders():
-    employees = get_active_employees(employees_excel_path)
-    trainings = read_excel_as_table(trainings_excel_path)
+    employees = get_active_employees(EMPLOYEES_EXCEL_PATH)
+    trainings = read_excel_as_table(TRAININGS_EXCEL_PATH)
     send_reminders(employees, trainings)
 
 
-def get_active_employees(employees_excel_path):
-    employees = read_excel_as_table(employees_excel_path)
+def get_active_employees(excel_path):
+    employees = read_excel_as_table(excel_path)
     tables.filter_table_by_column(employees, "Status", "==", "Active")
     tables.filter_table_by_column(employees, "Category", "==", "Employee")
     return employees
