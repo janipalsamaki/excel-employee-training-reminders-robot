@@ -1,5 +1,5 @@
 from RPA.Excel.Files import Files
-from RPA.Tables import Table, Tables
+from RPA.Tables import Tables
 from emailer import send_email
 from os import environ
 
