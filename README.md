@@ -35,3 +35,7 @@ This Python robot automates the training reminder process:
 - Reads the employee and training data from the Excel files. No Excel application required!
 - Finds the active employees (`Category` = `Employee`, `Status` = `Active`).
 - Sends an email reminder to all employees who have not completed all the required training.
+
+### Example email
+
+> Hi, Suzy Smith! Remember to complete these trainings: {'How to eat underwater', 'Basics of RPA'}.
