@@ -1,5 +1,7 @@
 # Employee training reminders robot
 
+> **Accessing Excel files with Robocorp is much more convenient, faster, and robust than interacting with the Excel application UI.** No Excel licenses or installation required. No flaky UI surface automation. Benefit from all the power and flexibility of the Python ecosystem!
+
 ## Background story
 
 Acme Corporation requires employees to complete the required training. The employee and training information is stored in a highly-sophisticated HR solution: Excel files!
@@ -40,7 +42,7 @@ Jane from HR sends weekly reminders to active employees who have not completed a
 
 This Python robot automates the training reminder process:
 
-- Reads the employee and training data from the Excel files. **No Excel application required!**
+- Reads the employee and training data from the Excel files. No Excel application required! **Accessing the Excel files is much more convenient, faster, and robust than interacting with the Excel UI.**
 - Finds the active employees (`Category` = `Employee`, `Status` = `Active`).
 - Sends an email reminder to all employees who have not completed all the required training.
 
