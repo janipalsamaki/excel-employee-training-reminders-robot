@@ -1,10 +1,10 @@
-from os import environ
-from emailer import send_email
+import os
+import emailer
 from RPA.Excel.Files import Files
 from RPA.Tables import Tables
 
-EMPLOYEES_EXCEL_PATH = environ["EMPLOYEES_EXCEL_PATH"]
-TRAININGS_EXCEL_PATH = environ["TRAININGS_EXCEL_PATH"]
+EMPLOYEES_EXCEL_PATH = os.environ["EMPLOYEES_EXCEL_PATH"]
+TRAININGS_EXCEL_PATH = os.environ["TRAININGS_EXCEL_PATH"]
 excel = Files()
 tables = Tables()
 
@@ -58,7 +58,7 @@ def send_reminder(employee, not_completed_trainings):
         f"Hi, {name}! "
         f"Remember to complete these trainings: {not_completed_trainings}."
     )
-    send_email(recipient, subject, body)
+    emailer.send_email(recipient, subject, body)
 
 
 if __name__ == "__main__":
